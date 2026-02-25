@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil Usaha Buku</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+    <img src="" width="1312" height="300">
+</header>
+
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="produk.html">Produk</a>
+    <a href="bedah-buku.html">Bedah Buku</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+</nav>
+
+<h1>Toko Buku Aira</h1>
+
+<main class="formulir">
+    <h2>Ketikan Testimoni Anda</h2>
+
+    <form id="formTestimoni">
+        <label>Nama:</label>
+        <input type="text" id="nama" name="nama" required placehorder="Nama Lengkap">
+
+        <label>Asal Sekolah/Instansi/Komunitas:</label>
+        <input type="text" id="asal" name="asal" required placeholder="Contoh: SMA Al-Kautsar">
+
+        <label>Email:</label>
+        <input type="email" id="email" name="email" required placeholder="email@example.com">
+
+        <label>Judul Buku Yang Anda Beli:</label>
+        <input type="text" id="judul" name="judul" 
+
+        <label>Rating untuk toko ini 1-5:</label>
+        <input type="number" id="rating" min="1" max="5">
+
+        <label>Testimoni Anda:</label>
+        <textarea id="pesan" name="pesan" required placehorder="Tulis pengalaman Anda..." rows="5"></textarea>
+
+        <button type="submit">Kirim Testimoni</button>
+    </form>
+</main>
+<footer>
+    <p>&copy; 2026 Toko Buku Aira</p>
+</footer>
+
+<script>
+    const container = document.getElementById('daftarTestimoni');
+    const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+
+    if (testimoniList.length === 0) {
+        container.innerHTML = "<p>Belum ada testimoni.</p>";
+    } else {
+        testimoniList.forEach((t, i) => {
+            const el = document.createElement('div');
+            el.className = 'testimoni-box';
+            el.innerHTML = `
+                <p><strong>Nama:</strong> ${t.nama}</p>
+                <p><strong>Asal Sekolah / Instansi / Komunitas:</strong> ${t.asal}</p>
+                <p><strong>Email:</strong> ${t.email}</p>
+                <p><strong>Judul Buku yang Dibeli:</strong> ${t.judul}</p>
+                <p><strong>Testimoni Anda:</strong> ${t.pesan}</p>
+                <p><strong>Rating:</strong> ${t.rating}</p>
+            `;
+            container.appendChild(el);
+        });
+    }
+
+    document.getElementById("hapusSemua").addEventListener("click", function() {
+        const konfirmasi = confirm("Apakah Anda yakin ingin menghapus semua testimoni?");
+        if (konfirmasi) {
+            localStorage.removeItem("testimoniList");
+            location.reload();
+        }
+    });
+</script>
+
+</body>
+</html>
