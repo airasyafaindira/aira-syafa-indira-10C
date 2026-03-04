@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Toko Buku Aira</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f5fb;
+            margin: 0;
+        }
+
+        header {
+            background-color: #2b6cb0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2b6cb0;
+            margin-top: 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2b6cb0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e4e8c;
+        }
+
+        #notifikasi {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="produk.html">Produk</a>
+    <a href="bedah-buku.html">Bedah Buku</a>
+    <a href="testimoni.html"></a>
+    <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="event.html">Event</a>
+</nav>
+<header>
+    <h1>Toko Buku Aira</h1>
+    <p>Hubungi Kami</p>
+</header>
+
+<div class="container">
+
+    <!-- Alamat Toko -->
+    <div class="card">
+        <h2>Alamat Toko</h2>
+        <p><strong>Nama Toko:</strong> Toko Buku Aira</p>
+        <p><strong>Alamat:</strong> Jl. Pendidikan No. 10, Surabaya</p>
+        <p><strong>Telepon:</strong> 0812-3456-7890</p>
+        <p><strong>Email:</strong> tokobukuaira@gmail.com</p>
+        <p><strong>Jam Buka:</strong> Senin - Sabtu (08.00 - 17.00)</p>
+    </div>
+
+    <!-- Form Kontak -->
+    <div class="card">
+        <h2>Form Kontak</h2>
+        <form id="formKontak">
+            <label>Nama:</label>
+            <input type="text" id="nama" required>
+
+            <label>Email:</label>
+            <input type="email" id="email" required>
+
+            <label>Pesan:</label>
+            <textarea id="pesan" rows="4" required></textarea>
+
+            <button type="submit">Kirim Pesan</button>
+        </form>
+
+        <div id="notifikasi"></div>
+    </div>
+
+</div>
+
+<script>
+document.getElementById("formKontak").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let nama = document.getElementById("nama").value;
+    document.getElementById("notifikasi").innerHTML =
+        "Terima kasih, " + nama + "! Pesan Anda sudah kami terima.";
+});
+</script>
+
+</body>
+</html>
