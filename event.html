@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event - Toko Buku Aira</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2f5fb;
+        }
+
+        header {
+            background-color: #2b6cb0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #1e4e8c;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 320px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #2b6cb0;
+            margin-top: 0;
+        }
+
+        button {
+            background-color: #2b6cb0;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e4e8c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #ddd;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Event Toko Buku Aira</h1>
+    <p>Pameran Buku & Diskon Spesial</p>
+</header>
+
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="event.html">Event</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h2>📚 Pameran Buku 2026</h2>
+        <p><strong>Tanggal:</strong> 10 - 15 April 2026</p>
+        <p>Pameran buku pelajar, novel, dan buku islami dengan koleksi terbaru dan terlengkap.</p>
+        <button onclick="daftar()">Daftar Sekarang</button>
+    </div>
+
+    <div class="card">
+        <h2>🎉 Diskon Besar-Besaran</h2>
+        <p><strong>Diskon:</strong> Hingga 30%</p>
+        <p>Dapatkan potongan harga spesial untuk semua buku selama event berlangsung.</p>
+        <button onclick="alert('Selamat! Anda mendapatkan info diskon spesial 🎉')">
+            Lihat Promo
+        </button>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Toko Buku Aira
+</footer>
+
+<script>
+function daftar() {
+    alert("Terima kasih sudah mendaftar Pameran Buku!");
+}
+</script>
+
+</body>
+</html>
